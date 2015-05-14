@@ -1,4 +1,5 @@
 import time
+import datetime
 import sys
 
 from pingo.parts import serial
@@ -12,7 +13,7 @@ def main(port=DEFAULT_PORT):
 
     while True:
         lcd.set_cursor(0, 0)
-        lcd.write(time.strftime('%H:%M:%S:%f'))
+        lcd.write(datetime.datetime.strftime('%H:%M:%S:%f'))
         time.sleep(.1)
 
 if __name__ == '__main__':
