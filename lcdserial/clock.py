@@ -6,7 +6,6 @@ from pingo.parts import serial
 lcd = serial.LCD16x2('/dev/ttyAMA0', 9600)
 time.sleep(.5)  # wait for display to boot up
 
-
 while True:
     lcd.set_cursor(0, 0)
     lcd.write(time.strftime('%H:%M:%S'))
