@@ -10,7 +10,7 @@ def main(port=DEFAULT_PORT):
     time.sleep(.5)  # wait for display to boot up
     lcd.clear()
     lcd.set_cursor(0, 0)
-    lcs.write(b'Pingo = Pin, go!')
+    lcd.write(b'Pingo = Pin, go!')
 
     while True:
         lcd.set_cursor(1, 4)
