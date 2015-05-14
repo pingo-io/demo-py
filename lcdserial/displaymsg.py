@@ -13,7 +13,7 @@ def main(port=DEFAULT_PORT):
         lines.append(raw_input('> '))
         for i, line in enumerate(lines):
             lcd.set_cursor(i, 0)
-            lcd.write(line)
+            lcd.write(line.ljust(16, b' ')
 
 if __name__ == '__main__':
     main(*sys.argv[1:])
