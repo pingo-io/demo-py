@@ -14,7 +14,7 @@ def main(port=DEFAULT_PORT):
     while True:
         lcd.set_cursor(0, 0)
         now = datetime.datetime.now()
-        lcd.write(now.strftime('%H:%M:%S:%f'))
+        lcd.write(now.strftime('%H:%M:%S:%f')[:10])
         time.sleep(.1)
 
 if __name__ == '__main__':
