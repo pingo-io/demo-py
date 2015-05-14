@@ -9,9 +9,11 @@ def main(port=DEFAULT_PORT):
     lcd = serial.LCD16x2(port)
     time.sleep(.5)  # wait for display to boot up
     lcd.clear()
+    lcd.set_cursor(0, 0)
+    lcs.write(b'Pingo = Pin, go!')
 
     while True:
-        lcd.set_cursor(0, 0)
+        lcd.set_cursor(1, 4)
         lcd.write(time.strftime('%H:%M:%S'))
         time.sleep(1)
 
