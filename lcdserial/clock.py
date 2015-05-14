@@ -12,8 +12,8 @@ def main(port=DEFAULT_PORT):
 
     while True:
         lcd.set_cursor(0, 0)
-        lcd.write(time.strftime('%H:%M:%S'))
-        time.sleep(1)
+        lcd.write(time.strftime('%H:%M:%S:%f'))
+        time.sleep(.1)
 
 if __name__ == '__main__':
     main(*sys.argv[1:])
