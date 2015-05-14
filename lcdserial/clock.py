@@ -7,7 +7,7 @@ from pingo.parts import serial
 DEFAULT_PORT = '/dev/ttyAMA0'  # the mini-UART port on the Raspberry Pi
 
 def main(port=DEFAULT_PORT):
-    lcd = serial.LCD16x2(port, 19200)
+    lcd = serial.LCD16x2(port)
     time.sleep(.5)  # wait for display to boot up
     lcd.clear()
 
