@@ -7,6 +7,7 @@ DEFAULT_PORT = '/dev/ttyAMA0'  # the mini-UART port on the Raspberry Pi
 
 def main(port=DEFAULT_PORT):
     lcd = serial.LCD16x2(port)
+    print(lcd)
     lcd.clear()
     lcd.set_cursor(0, 0)
     lcd.write(b'Pingo = Pin, go!')
