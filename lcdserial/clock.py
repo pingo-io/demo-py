@@ -1,7 +1,8 @@
-from pingo import parts
 import time
 
-lcd = parts.serial.LCD16x2('/dev/ttyAMA0', 9600)
+from pingo.parts import serial
+
+lcd = serial.LCD16x2('/dev/ttyAMA0', 9600)
 
 while True:
     lcd.move_cursor(0, 0)
