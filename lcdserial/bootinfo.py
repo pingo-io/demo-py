@@ -7,15 +7,12 @@ from pingo.parts import serial
 
 DEFAULT_PORT = '/dev/ttyAMA0'  # the mini-UART port on the Raspberry Pi
 
-def main(msg='', port=DEFAULT_PORT):
-    lcd = serial.LCD16x2(port)
+def main(msgs):
+    lcd = serial.LCD16x2(DEFAULT_PORT)
     lcd.clear()
-    lcd.set_cursor(0, 0)
-    timestr = time.strftime('booted: %H:%M:%S') 
-    lcd.write(timestr.center(16))
-    lcd.set_cursor(1, 0)
-    lcd.write(msg.center(16))
-
+    for i, msg in enumerate(msgs[:2]):
+        lcd.set_cursor(i, 0)
+        lcd.write(msg)
 
 if __name__ == '__main__':
     main(*sys.argv[1:])
